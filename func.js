@@ -9,6 +9,24 @@ function carregar(pagina){
 //
 //
 //
+function mudaTitulo(){
+    var titulo = $("#titulo");
+
+    if(titulo.val() == '1'){
+        $("#title").empty();
+        $("#title").append('<h1>Diagrama</h1>');
+        titulo.val('2');
+    }
+    else{
+        $("#title").empty();
+        $("#title").append('<h1>Minimundo</h1>');
+        titulo.val('1');
+    }
+}
+
+//
+//
+//
 function addMembroCelula(ordem,nome_igreja,membro_cpf,nome_celula,cidade_celula,uf_celula){
     $("#plot").empty();
     //
@@ -2044,32 +2062,6 @@ function show_lista_membros_igreja(nome_igreja){
     xmlhttp.send("data=" + parametros); //passo os dados(json) para o arquivo
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function checa_cpf(cpf) {
 	//lista de CPFs inválidos, mas não por causa da fórmula
