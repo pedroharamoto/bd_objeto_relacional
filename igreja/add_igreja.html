@@ -20,8 +20,8 @@
 
         <div class="row">
           <div class="col-md-6">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Nome:</span>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Nome:</span>
               <input value="igreja" id="igreja_nome" type="text" class="form-control" placeholder="Nome da Igreja" aria-describedby="basic-addon1">
             </div>
           </div>
@@ -66,8 +66,8 @@
 
         <div class="row">
             <div class="col-md-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">CEP:</span>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">CEP:</span>
                     <input value="12345-123" id="igreja_cep" type="text" class="form-control" placeholder="CEP Igreja" aria-describedby="basic-addon1">
                 </div>
             </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="col-md-6">
         <div class="alinhamento">
-          <input class="btn btn-primary" id="btn_add_igreja" onclick="envia(1)" type="button" value="Cadastrar"></input>
+          <input class="btn btn-primary" id="btn_add_igreja" onclick="addIgreja()" type="button" value="Cadastrar"></input>
         </div>
       </div>
     </div>

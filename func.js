@@ -963,7 +963,7 @@ function addMembro(ordem,membro_igreja_nome,membro_nome,membro_cpf,membro_nasc,m
 //
 //
 //
-function addIgreja(ordem,igreja_nome,igreja_qte_membros,igreja_rua,igreja_numero,igreja_complemento,igreja_cep,igreja_bairro,igreja_cidade,igreja_uf){
+function addIgreja(igreja_nome,igreja_rua,igreja_numero,igreja_complemento,igreja_cep,igreja_bairro,igreja_cidade,igreja_uf){
     //função para add uma igreja
     $("#plot").empty();
     //
