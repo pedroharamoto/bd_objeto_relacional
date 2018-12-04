@@ -37,8 +37,8 @@
                   <span class="input-group-addon" id="basic-addon1">Sexo:</span>
                   <select class="form-control" name="membro_sexo" id="membro_sexo">
                       <option value="0">Selecione o Sexo</option>
-                      <option value="F">Feminino</option>
-                    <option value="M">Masculino</option>
+                      <option value="f">Feminino</option>
+                    <option value="m">Masculino</option>
                   </select>
               </div>
           </div>
@@ -195,7 +195,7 @@
       </div>
       <div class="col-md-6">
         <div class="alinhamento">
-          <input class="btn btn-success" id="btn_add_membro" onclick="envia(3)" type="button" value="Cadastrar"></input>
+          <input class="btn btn-success" id="btn_add_membro" onclick="addMembroIgreja()" type="button" value="Cadastrar"></input>
         </div>
       </div>
     </div>
@@ -226,7 +226,7 @@
 
 $(document).ready(function() {
 
-show_lista_igrejas();
+    listaIgrejas();
 
 });
 

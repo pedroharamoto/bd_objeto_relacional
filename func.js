@@ -1,11 +1,4 @@
-function carregar(pagina){
 
-  var corpo = $('#corpo');
-
-  corpo.empty();
-
-  corpo.load(pagina)
-};
 //
 //
 //
