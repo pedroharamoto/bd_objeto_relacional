@@ -7,6 +7,7 @@ html{
 
 body {
   font-family: 'Tajawal', sans-serif !important;
+  font-size: 18px;
   position: relative;
   min-height: 100%;
 }
@@ -15,6 +16,9 @@ body {
 .recuo{
   text-indent: 1em;
   text-align: justify;
+}
+.textt{
+    font-size: 20px;
 }
 .table-hover-2 > tbody > tr:hover {
    background-color: rgba(0,128,0,0.15);
@@ -176,7 +180,7 @@ nav {
   top: 0;
   left: 0;
   filter: blur(2px) brightness(92%);
-  z-index: 3;
+  z-index: -1;
   height: 60px;
   width: 100%;
   background: url(../img/background.png) no-repeat fixed right center;
@@ -198,4 +202,3 @@ nav {
   letter-spacing: 2px;
   font-weight: 600;
 }
-

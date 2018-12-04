@@ -3,7 +3,8 @@ function carregar(pagina){
   var corpo = $('#corpo');
 
   corpo.empty();
-  corpo.load(pagina);
+
+  corpo.load(pagina)
 };
 //
 //

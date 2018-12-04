@@ -10,14 +10,16 @@
 
          <title>Sistema BD II</title>
 
-         <link rel="stylesheet" href="css/bootstrap.css">
          <!-- <link rel="stylesheet" href="css/bootstrap-responsive.css"> -->
          <link rel="stylesheet" href="css/style.css">
 
          <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
 
-         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-         <script type="text/javascript" src="js/bootstrap.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- bejo na boca do jao -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
          <!-- 1. Add these JavaScript inclusions in the head of your page -->
 
@@ -27,47 +29,48 @@
 
   <body>
     <div class="filter"></div>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-start" href="index.html">Início</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-start" href="index.html">Início</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Inserir
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" onclick="carregar('igreja/add_igreja.html')">Igreja</a>
+                        <a class="dropdown-item" onclick="carregar('culto/add_culto.html')">Culto</a>
+                        <a class="dropdown-item" onclick="carregar('membro/add_membro.html')">Membro</a>
+                        <a class="dropdown-item" onclick="carregar('pastor/add_pastor.html')">Pastor</a>
+                        <a class="dropdown-item" onclick="carregar('rede/add_rede.html')">Rede</a>
+                        <a class="dropdown-item" onclick="carregar('celula/add_celula.html')">Célula</a>
+                        <a class="dropdown-item" onclick="carregar('celula/add_reuniao.html')">Reunião de Célula</a>
+                    </div>
+                </li>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <button class="dropbtn">Inserir</button>
-                <div class="dropdown-content">
-                  <a onclick="carregar('igreja/add_igreja.html')">Igreja</a>
-                  <a onclick="carregar('culto/add_culto.html')">Culto</a>
-                  <a onclick="carregar('membro/add_membro.html')">Membro</a>
-                  <a onclick="carregar('pastor/add_pastor.html')">Pastor</a>
-                  <a onclick="carregar('rede/add_rede.html')">Rede</a>
-                  <a onclick="carregar('celula/add_celula.html')">Célula</a>
-                  <a onclick="carregar('celula/add_reuniao.html')">Reunião de Célula</a>
-                </div>
-              </li>
-              <li class="dropdown">
-                <button class="dropbtn">Mostrar</button>
-                <div class="dropdown-content">
-                  <a onclick="carregar('igreja/show_igreja.html')">Igrejas</a>
-                  <a onclick="carregar('culto/show_culto.html')">Cultos</a>
-                  <a onclick="carregar('membro/show_membro.html')">Membros</a>
-                  <a onclick="carregar('pastor/show_pastor.html')">Pastores</a>
-                  <a onclick="carregar('rede/show_rede.html')">Redes</a>
-                  <a onclick="carregar('celula/show_celula.html')">Células</a>
-                </div>
-              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Mostrar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" onclick="carregar('igreja/show_igreja.html')">Igrejas</a>
+                        <a class="dropdown-item" onclick="carregar('culto/show_culto.html')">Cultos</a>
+                        <a class="dropdown-item" onclick="carregar('membro/show_membro.html')">Membros</a>
+                        <a class="dropdown-item" onclick="carregar('pastor/show_pastor.html')">Pastores</a>
+                        <a class="dropdown-item" onclick="carregar('rede/show_rede.html')">Redes</a>
+                        <a class="dropdown-item" onclick="carregar('celula/show_celula.html')">Células</a>
+                    </div>
+                </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-
+      </div>
+    </nav>
 
     <header class="jumbotron" id="cabecalho">
       <h1>TRABALHO DE BD II</h1>
-      <p>Web site desenvolvido para manipular um  banco de dados objeto relacional para a máteria de Banco de Dados II.</p>
+      <p>Web site desenvolvido para manipular um banco de dados objeto relacional.</p>
     </header>
 
     <!-- CORPO DO SITE -->
@@ -75,9 +78,79 @@
     <div id="corpo" class="container">
       <div class="row">
         <div class="col-md-12">
-
-        <h1>Opções</h1>
-
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Início</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="textt">
+                            <p class="recuo">
+                                Uma rede de igrejas deseja administrar melhor suas filiais (que podem estar
+                                em cidades e estados diferentes). Todas estas igrejas, além de realizar reuniões
+                                semanais (cultos) aos domingos no prédio principal da unidade, são divididas em
+                                outros vários pequenos grupos que se encontram semanalmente nas residências dos
+                                líderes destes grupos. O líder sempre é um membro comprometido da igreja. Estes
+                                grupos são chamados de "células".
+                            </p>
+                            <p class="recuo">
+                                Uma célula não pode conter mais do que 12 membros compromissados, por
+                                isso, quando ela está prestes a atingir este número, deve ser dividida em 2, originando
+                                uma nova célula com metade dos membros da célula original, sendo que o novo líder
+                                é necessariamente um membro da célula original. A divisão das células deve ser
+                                decidida manualmente pelo líder da célula original. Uma célula sempre pertence a
+                                uma rede, e as células que se dividem a partir de uma célula de uma dada rede
+                                sempre pertencerão à mesma rede.
+                            </p>
+                            <p class="recuo">
+                                Membros desta rede de igrejas devem ser membros comprometidos de apenas
+                                uma igreja ao mesmo tempo e podem ser membros de apenas uma célula desta
+                                igreja. Um membro comprometido de uma célula necessariamente é um membro
+                                comprometido da igreja a que esta célula pertence. Apenas os dados de membros
+                                compromissados são guardados. Sobre os membros, deseja-se saber seu CPF,
+                                nome, endereço, telefone, sexo, igreja a que pertence, célula que frequenta (pode
+                                não participar de nenhuma célula), e-mail (não obrigatório) e data de nascimento. Um
+                                líder é um membro que lidera uma célula e/ou uma rede.
+                            </p>
+                            <p class="recuo">
+                                Para cada culto, deseja-se saber o valor da oferta coletada, o valor do dízimo,
+                                o preletor (que pode ser qualquer pessoa, até mesmo alguém que não é membro
+                                comprometido desta igreja, como um líder de uma outra rede de igrejas), número de
+                                pessoas presentes, a data e o horário da reunião. Para cada reunião da célula, devese
+                                saber quais membros compromissados estiveram presentes, quantos visitantes
+                                compareceram e o número total de presentes, além do valor da oferta, a data e o
+                                horário da reunião.
+                            </p>
+                            <p class="recuo">
+                                Quantos às células, deve-se saber quais são seus membros
+                                compromissados, qual seu líder, o endereço onde se reúnem, a igreja e a rede a
+                                que a célula pertence (uma rede só pode pertencer a uma igreja), o dia e o horário
+                                normal em que as reuniões acontecem (em algumas ocasiões, a célula pode se
+                                reunir num dia/horário diferente, mas apenas raramente). Cada rede possui um líder
+                                e é identificada por uma cor. As igrejas também possuem um líder (neste caso, um
+                                pastor), um endereço e o número total de membros compromissados.
+                            </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img class="d-block w-100" src="img/diag.png" alt="Second slide">
+                        </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                </div>
+            </div>
 
         </div>
       </div>
