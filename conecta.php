@@ -1,15 +1,14 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd1";
+$pdo = new PDO("pgsql:host=192.168.1.105;dbname=postgres", "postgres", "pipoco");
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+
+$sql = 'SELECT pastor FROM igrejas';
+
+
+foreach ($pdo->query($sql) as $row) {
+    foreach(array_keys($row) as $paramName)
+        echo $paramName . "<br>";
 }
 
 
