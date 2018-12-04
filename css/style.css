@@ -13,6 +13,18 @@ body {
 }
 /* Footer
 -------------------------------------------------- */
+.navtitulo{
+    font-size: 30px;
+    color: purple;
+}
+.navOp{
+    font-size: 21px;
+    color: purple !important;
+}
+.navOp2{
+    font-size: 17px;
+    color: purple !important;
+}
 .recuo{
   text-indent: 1em;
   text-align: justify;
