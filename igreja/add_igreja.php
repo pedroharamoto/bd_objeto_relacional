@@ -1,5 +1,5 @@
 <?php
-include "conecta.php";
+include "../conecta.php";
 
 $query = "INSERT INTO igrejas (igreja_nome, igreja_end) VALUES ";
 $query .= "('" . $_POST["igreja_nome"] .    "',";

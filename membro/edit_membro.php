@@ -287,7 +287,7 @@ $ufs = ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA",
     $(document).ready(function() {
 
         $("#membro_igreja").change(function(){
-            show_lista_celula_igreja($(this).val());
+            
         });
 
     });
