@@ -149,7 +149,7 @@ function addCulto() {
     }).done((data) => alert("OK"));
 }
 
-function atualizaListaMembros() {
+function atualizaListaNaoPastores() {
 
     $("#mostra_membros_igrejas").empty();
 
@@ -242,17 +242,119 @@ function promoveParaPastor(cpf_membro, igreja_nome) {
 
 function listaMembrosIgreja() {
 
+    var igreja_nome = $("#membro_igreja_nome").val();
+    var membro_nome = $("#proc_membro_nome").val();
+
     var dados = {
-            "nome_igreja" : nome_igreja
+            "nome_igreja" : igreja_nome,
+            "nome_membro" : membro_nome
     };
 
-    $("#lista_membros").empty();
+    $("#mostra_membros_igreja").empty();
 
 
     $.ajax({
         method: "GET",
         url: "membro/lista_membros_igreja.php",
+        data:   dados
+    }).done((retorno) => {
 
-    })
+        retorno = JSON.parse(retorno);
 
+        var texto_retorno = '<table class="table table-striped" style="width:100%;"><thead><tr><th style="width:5%;">#</th><th style="width:95%;">Nome</th></tr></thead>';
+        texto_retorno += '<tbody>';
+        //
+        for (i in retorno) {
+
+            var n = parseInt(parseInt(i)+1);
+
+            texto_retorno += '<tr>';
+            texto_retorno += '<td>'+ n +'</td>';
+            texto_retorno +='<td>';
+
+            texto_retorno += '<a role="button" data-toggle="collapse" href="#collapse'+n+'" aria-expanded="false" aria-controls="collapse'+n+'">';
+            texto_retorno += '' + retorno[i].membro_nome+ '';
+            texto_retorno += '</a>';
+
+            texto_retorno += '<div class="collapse" id="collapse'+n+'">';
+            texto_retorno +=    '<div class="well">';
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'CPF: '+ retorno[i].membro_cpf + '<br>';
+            texto_retorno +=        '</p>';
+
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'Endereço: ' + retorno[i].rua + ', ' + retorno[i].numero;
+            texto_retorno +=            ', ' + retorno[i].bairro + ', ' + retorno[i].cep;
+            texto_retorno +=        '</p>';
+            texto_retorno +=    '</div>';
+
+            texto_retorno += '</div>';
+            texto_retorno += '</td>';
+
+            texto_retorno += '</tr>';
+
+        }
+        texto_retorno += '</tbody></table>';
+
+        $("#mostra_membros_igreja").append(texto_retorno);
+    });
+}
+
+function listaPastores() {
+
+    var igreja_nome = $("#membro_igreja_nome").val();
+    var membro_nome = $("#proc_membro_nome").val();
+
+    var dados = {
+            "nome_igreja" : igreja_nome,
+            "nome_membro" : membro_nome
+    };
+
+    $("#mostra_membros_igreja").empty();
+
+    $.ajax({
+        method: "GET",
+        url: "membro/lista_membros_igreja.php",
+        data:   dados
+    }).done((retorno) => {
+
+        retorno = JSON.parse(retorno);
+
+        var texto_retorno = '<table class="table table-striped" style="width:100%;"><thead><tr><th style="width:5%;">#</th><th style="width:95%;">Nome</th></tr></thead>';
+        texto_retorno += '<tbody>';
+        //
+        for (i in retorno) {
+
+            var n = parseInt(parseInt(i)+1);
+
+            texto_retorno += '<tr>';
+            texto_retorno += '<td>'+ n +'</td>';
+            texto_retorno +='<td>';
+
+            texto_retorno += '<a role="button" data-toggle="collapse" href="#collapse'+n+'" aria-expanded="false" aria-controls="collapse'+n+'">';
+            texto_retorno += '' + retorno[i].membro_nome+ '';
+            texto_retorno += '</a>';
+
+            texto_retorno += '<div class="collapse" id="collapse'+n+'">';
+            texto_retorno +=    '<div class="well">';
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'CPF: '+ retorno[i].membro_cpf + '<br>';
+            texto_retorno +=        '</p>';
+
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'Endereço: ' + retorno[i].rua + ', ' + retorno[i].numero;
+            texto_retorno +=            ', ' + retorno[i].bairro + ', ' + retorno[i].cep;
+            texto_retorno +=        '</p>';
+            texto_retorno +=    '</div>';
+
+            texto_retorno += '</div>';
+            texto_retorno += '</td>';
+
+            texto_retorno += '</tr>';
+
+        }
+        texto_retorno += '</tbody></table>';
+
+        $("#mostra_membros_igreja").append(texto_retorno);
+    });
 }

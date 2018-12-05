@@ -32,7 +32,7 @@
 
         <div class="col-md-4">
 
-            <input class="btn btn-success" id="btn_procura_membros" onclick="envia(57)" type="button" value="Procurar"></input>
+            <input class="btn btn-success" id="btn_procura_membros" onclick="listaMembrosIgreja()" type="button" value="Procurar"></input>
 
         </div>
     </div>
@@ -43,7 +43,7 @@
 
     <div class="row">
         <div class="col-md-12">
-          <div id="mostra_membros_igrejas">
+          <div id="mostra_membros_igreja">
 
               <p></p>
 
@@ -59,9 +59,8 @@
 
 <script type='text/javascript'>
 
-$(document).ready(function() {
-
-
-});
+    $(document).ready(function() {
+        listaIgrejas();
+    });
 
 </script>
