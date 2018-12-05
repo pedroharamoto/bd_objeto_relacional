@@ -52,7 +52,7 @@ function addIgreja(){
     }).done((data) => alert(data));
 }
 
-function listaIgrejas() {
+function listaIgrejas(callback = null) {
 
 
     $.ajax({
@@ -75,6 +75,8 @@ function listaIgrejas() {
         texto_retorno += '</select>';
         $("#lista_igrejas").append(texto_retorno);
 
+        if(callback != null)
+            callback();
     });
 }
 
@@ -244,5 +246,13 @@ function listaMembrosIgreja() {
             "nome_igreja" : nome_igreja
     };
 
-    
+    $("#lista_membros").empty();
+
+
+    $.ajax({
+        method: "GET",
+        url: "membro/lista_membros_igreja.php",
+
+    })
+
 }
