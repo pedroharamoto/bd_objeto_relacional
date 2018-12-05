@@ -328,12 +328,12 @@ function listaPastores() {
         data:   dados
     }).done((retorno) => {
 
-        console.log(retorno);
+        //console.log(retorno);
         
 
         retorno = JSON.parse(retorno);
 
-        var texto_retorno = '<table class="table table-striped" style="width:100%;"><thead><tr><th style="width:5%;">#</th><th style="width:95%;">Nome</th></tr></thead>';
+        var texto_retorno = '<table class="table table-striped" style="width:100%;"><thead><tr><th style="width:5%;">#</th><th style="width:20%;">Igreja</th><th style="width:75%;">Nome</th></tr></thead>';
         texto_retorno += '<tbody>';
         //
         for (i in retorno) {
@@ -342,6 +342,9 @@ function listaPastores() {
 
             texto_retorno += '<tr>';
             texto_retorno += '<td>'+ n +'</td>';
+
+            texto_retorno += '<td>' + retorno[i].igreja_nome + '</td>';
+
             texto_retorno +='<td>';
 
             texto_retorno += '<a role="button" data-toggle="collapse" href="#collapse'+n+'" aria-expanded="false" aria-controls="collapse'+n+'">';
@@ -355,9 +358,21 @@ function listaPastores() {
             texto_retorno +=        '</p>';
 
             texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'Data de Nascimento: ' + retorno[i].membro_nasc + '';
+            texto_retorno +=        '</p>';
+
+            texto_retorno +=        '<p class="recuo">';
             texto_retorno +=            'Endereço: ' + retorno[i].rua + ', ' + retorno[i].numero;
             texto_retorno +=            ', ' + retorno[i].bairro + ', ' + retorno[i].cep;
             texto_retorno +=        '</p>';
+
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'Telefone: ' + retorno[i].membro_tel + '';
+            texto_retorno +=        '</p>';
+
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'E-mail: ' + retorno[i].membro_email + '';
+            texto_retorno +=        '</p>';            
             texto_retorno +=    '</div>';
 
             texto_retorno += '</div>';
@@ -366,6 +381,7 @@ function listaPastores() {
             texto_retorno += '</tr>';
 
         }
+        texto_retorno += '</tbody></table>';
         texto_retorno += '</tbody></table>';
 
         $("#mostra_pastores").append(texto_retorno);
