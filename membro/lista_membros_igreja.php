@@ -1,15 +1,23 @@
 <?php
 
-    include '../conecta.php';
+include '../conecta.php';
 
-    $sql = "select membro_cpf, membro_nome, (membro_end).* from (select (unnest(igreja_membros)).* from igrejas where igreja_nome = '". $_GET["nome_igreja"] ."') p where membro_nome like '". $_GET["nome_membro"] ."%';";
+$igreja_nome = $_GET["nome_igreja"];
+$condicao = "";
 
-    $query = $conn->prepare($sql);
+if($igreja_nome){
+    $condicao .= " WHERE igreja_nome = '" . $igreja_nome . "'";
+}
 
-    $query->execute();
+$sql = "select membro_cpf, membro_nome, (membro_end).*, igreja_nome,membro_tel,membro_email,membro_sexo,membro_nasc from (select igreja_nome, (unnest(igreja_membros)).* from igrejas " . $condicao . ") p where membro_nome like '%". $_GET["nome_membro"] ."%';";
 
-    $result = $query->fetchAll();
 
-    print json_encode($result);
+$query = $conn->prepare($sql);
+
+$query->execute();
+
+$result = $query->fetchAll();
+
+print json_encode($result);
 
 ?>

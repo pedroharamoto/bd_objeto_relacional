@@ -3,8 +3,10 @@
   var header = $('#cabecalho');
 
   header.empty();
-  header.append('<h1>Mostrar cultos.</h1>');
+  header.append('<h1>Mostrar Cultos</h1>');
 </script>
+
+<script type="text/javascript" src="culto/show_culto.js"></script>
 
 <div class="row border-bot">
   <div class="col-md-12">
@@ -13,70 +15,44 @@
 </div>
 
 <div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <span for="inputIgreja">Igreja</span>
+                    <div id="lista_igrejas">
 
-    <div class="row">
+                    </div>
+                </div>
 
-        <div class="col-md-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Igreja:</span>
-                <div id="lista_igrejas">
+                <div class="form-group col-md-4">
+                    <span for="inputPreletor">Preletor</span>
+                    <input type="text" class="form-control" placeholder="Preletor do culto" id="culto_preletor"/>
+                </div>
 
+                <div class="form-group col-md-2 botaozin">
+                    <input class="btn btn-primary" id="btn_procura_cultos" onclick="procuraCultos()" type="button" value="Procurar"></input>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Preletor:</span>
-                <input value="" id="culto_preletor" type="text" class="form-control" placeholder="Procuro por preletores" aria-describedby="basic-addon1">
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Data:</span>
-                <input value="" id="culto_data" type="text" class="form-control" placeholder="Procure por data" aria-describedby="basic-addon1">
-            </div>
-        </div>
+        </form>
     </div>
-
-    <div class="row">
-        <p></p>
-    </div>
-
-    <div class="row">
-        <div class="alinhamento">
-            <div class="col-md-4">
-                <input class="btn btn-success" id="btn_procura_cultos" onclick="envia(124)" type="button" value="Procurar"></input>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <p></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-          <div id="mostra_culto">
-
-              <p></p>
-
-          </div>
-        </div>
-    </div>
-
-
-
 </div>
 
+<div class="row">
+    <div class="col-md-12">
+        <div id="mostra_cultos">
 
+        </div>
+    </div>
+</div>
+      
 
 <script type='text/javascript'>
 
-$(document).ready(function() {
-
-show_lista_igrejas();
-
-});
-
+    $(document).ready(function() {
+    
+        listaIgrejas();
+    
+    });
+    
 </script>
