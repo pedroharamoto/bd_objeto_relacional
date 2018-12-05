@@ -3,7 +3,7 @@
   var header = $('#cabecalho');
 
   header.empty();
-  header.append('<h1>Mostrar igrejas.</h1>');
+  header.append('<h1>Mostrar igrejas</h1>');
 </script>
 <script type="text/javascript" src="igreja/show_igreja.js"></script>
 
@@ -15,15 +15,30 @@
 </div>
 
 <div class="row">
-
   <div class="col-md-12">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputIgreja">Nome</label>
+          <input type="text" class="form-control" placeholder="Nome da Igreja" id="igreja_nome"></input>
+        </div>
 
-    <div id="mostra_igrejas">
-        <p></p>
-    </div>
-
-
+        <div class="form-group col-md-6 botaozin">
+            <input class="btn btn-primary" id="btn_proc_igreja" onclick="procuraIgrejas()" type="button" value="Procurar"></input>
+        </div>
+      </div>
+    </form>
   </div>
-
 </div>
 
+<div class="row">
+  <p></p>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div id="mostra_igrejas">
+
+    </div>
+  </div>
+</div>
