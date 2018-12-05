@@ -60,8 +60,6 @@ function listaIgrejas() {
         url: "igreja/lista_igrejas.php"
     }).done((retorno) => {
 
-        alert(retorno);
-
         retorno = JSON.parse(retorno);
 
         var texto_retorno = '<select class="form-control" name="membro_igreja_nome" id="membro_igreja_nome">';
@@ -205,7 +203,7 @@ function atualizaListaMembros() {
             texto_retorno +=    '<div class="row">';
             texto_retorno +=        '<div class="col-md-10">';
             texto_retorno +=            '<div class="alinhamento">';
-            texto_retorno +=                '<input class="btn btn-primary" id="btn_promover" onclick="promoveParaPastor('+retorno[i].membro_cpf + ',' + igreja_nome + ')" type="button" value="Promover"></input>';
+            texto_retorno +=                '<input class="btn btn-primary" id="btn_promover" onclick="promoveParaPastor('+retorno[i].membro_cpf + ',\'' + igreja_nome + '\')" type="button" value="Promover"></input>';
             texto_retorno +=            '</div>';
             texto_retorno +=        '</div>';
 
@@ -227,7 +225,7 @@ function atualizaListaMembros() {
 function promoveParaPastor(cpf_membro, igreja_nome) {
 
     var dados = {
-        "cpf_nome" : cpf_nome,
+        "cpf_membro" : cpf_membro,
         "igreja_nome" : igreja_nome
     };
 
@@ -236,7 +234,15 @@ function promoveParaPastor(cpf_membro, igreja_nome) {
         url: "pastor/add_pastor.php",
         data: dados
     }).done((retorno) => {
+        alert(retorno);
+    })
+}
 
+function listaMembrosIgreja() {
 
-    });
+    var dados = {
+            "nome_igreja" : nome_igreja
+    };
+
+    
 }
