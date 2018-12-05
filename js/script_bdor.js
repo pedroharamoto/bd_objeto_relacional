@@ -313,20 +313,23 @@ function listaMembrosIgreja() {
 function listaPastores() {
 
     var igreja_nome = $("#membro_igreja_nome").val();
-    var membro_nome = $("#proc_membro_nome").val();
+    var pastor_nome = $("#proc_pastor_nome").val();
 
     var dados = {
-            "nome_igreja" : igreja_nome,
-            "nome_membro" : membro_nome
+            "igreja_nome" : igreja_nome,
+            "pastor_nome" : pastor_nome
     };
 
-    $("#mostra_membros_igreja").empty();
+    $("#mostra_pastores").empty();
 
     $.ajax({
         method: "GET",
-        url: "membro/lista_membros_igreja.php",
+        url: "pastor/lista_pastores.php",
         data:   dados
     }).done((retorno) => {
+
+        console.log(retorno);
+        
 
         retorno = JSON.parse(retorno);
 
@@ -365,6 +368,6 @@ function listaPastores() {
         }
         texto_retorno += '</tbody></table>';
 
-        $("#mostra_membros_igreja").append(texto_retorno);
+        $("#mostra_pastores").append(texto_retorno);
     });
 }
