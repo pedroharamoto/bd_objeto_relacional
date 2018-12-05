@@ -60,7 +60,7 @@ function listaIgrejas() {
         url: "igreja/lista_igrejas.php"
     }).done((retorno) => {
 
-        alert(retorno);
+        //alert(retorno);
 
         retorno = JSON.parse(retorno);
 
@@ -146,7 +146,7 @@ function addCulto() {
         method: "POST",
         url: "culto/add_culto.php",
         data: dados
-    }).done((data) => alert(data));
+    }).done((data) => alert("OK"));
 }
 
 function atualizaListaMembros() {
