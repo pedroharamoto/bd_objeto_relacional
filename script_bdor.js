@@ -1,3 +1,18 @@
+function mudaTitulo(){
+    var titulo = $("#titulo");
+
+    if(titulo.val() == '1'){
+        $("#title").empty();
+        $("#title").append('<h1>Diagrama</h1>');
+        titulo.val('2');
+    }
+    else{
+        $("#title").empty();
+        $("#title").append('<h1>Minimundo</h1>');
+        titulo.val('1');
+    }
+}
+//
 function carregar(pagina){
 
   var corpo = $('#corpo');
