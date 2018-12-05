@@ -13,6 +13,9 @@ body {
 }
 /* Footer
 -------------------------------------------------- */
+.botaozin{
+  align-self: flex-end;
+}
 .navtitulo{
     font-size: 30px;
     color: purple;
