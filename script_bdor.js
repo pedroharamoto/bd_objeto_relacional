@@ -120,7 +120,7 @@ function addMembroIgreja() {
         method: "POST",
         url: "membro/add_membro.php",
         data: dados
-    }).done((data) => alert(data));
+    }).done((data) => alert("Membro Cadastrado!"));
 }
 
 function addCulto() {

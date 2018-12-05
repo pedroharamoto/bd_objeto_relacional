@@ -3,7 +3,7 @@
   var header = $('#cabecalho');
 
   header.empty();
-  header.append('<h1>Adicionar membro.</h1>');
+  header.append('<h1>Adicionar membro</h1>');
 </script>
 
 <div class="row border-bot">
@@ -13,199 +13,132 @@
 </div>
 
 <div class="row">
+    <div class="col-md-12">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <span for="inputNome">Nome</span>
+                        <input id="membro_nome" type="text" class="form-control" placeholder="Nome do Membro">
+                    </div>
 
-  <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <span for="inputCpf">CPF</span>
+                        <input id="membro_cpf" type="text" class="form-control" placeholder="CPF">
+                    </div>
 
-    <div class="row">
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Nome:</span>
-              <input value="AaE" id="membro_nome" type="text" class="form-control" placeholder="Nome do Membro" aria-describedby="basic-addon1">
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">CPF:</span>
-              <input id="membro_cpf" value="30057107258" type="text" class="form-control" placeholder="CPF" aria-describedby="basic-addon1">
-            </div>
-          </div>
-
-          <div class="col-md-3">
-              <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1">Sexo:</span>
-                  <select class="form-control" name="membro_sexo" id="membro_sexo">
-                      <option value="0">Selecione o Sexo</option>
-                      <option value="f">Feminino</option>
-                    <option value="m">Masculino</option>
-                  </select>
-              </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <p></p>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-5">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">E-mail:</span>
-                    <input value="aea@asde.com" id="membro_email" type="text" class="form-control" placeholder="E-mail do Membro" aria-describedby="basic-addon1">
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Telefone:</span>
-                    <input value="(18)99874-5784" id="membro_telefone" type="text" class="form-control" placeholder="Telefone" aria-describedby="basic-addon1">
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Data:</span>
-                    <input value="2018/06/15" id="membro_nasc" type="text" class="form-control" placeholder="Data de Nascimento" aria-describedby="basic-addon1">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-          <p></p>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-5">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Rua:</span>
-                    <input value="rua" id="membro_rua" type="text" class="form-control" placeholder="Rua do Membro" aria-describedby="basic-addon1">
-                </div>
-            </div>
-
-
-            <div class="col-md-2">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">N°:</span>
-                    <input value="1" id="membro_numero" type="text" class="form-control" placeholder="Número" aria-describedby="basic-addon1">
-                </div>
-            </div>
-
-            <div class="col-md-5">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Complemento:</span>
-                    <input value="complemento" id="membro_complemento" type="text" class="form-control" placeholder="Complemento do Endereço da Igreja" aria-describedby="basic-addon1">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-          <p></p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">CEP:</span>
-                    <input value="12345-123" id="membro_cep" type="text" class="form-control" placeholder="CEP do Membro" aria-describedby="basic-addon1">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-          <p></p>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-5">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Bairro:</span>
-                    <input value="bairro" id="membro_bairro" type="text" class="form-control" placeholder="Bairro do Membro" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Cidade:</span>
-                    <input value="cidade" id="membro_cidade" type="text" class="form-control" placeholder="Cidade do Membro" aria-describedby="basic-addon1">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">UF:</span>
-                    <select class="form-control" name="membro_uf" id="membro_uf">
-                        <option value="0">Selecione o Estado</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <p></p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Igreja:</span>
-                    <div id="lista_igrejas">
-
+                    <div class="form-group cold-md-3">
+                        <span for="inputNasc">Data</span>
+                        <input id="membro_nasc" type="text" class="form-control" placeholder="Data de Nascimento">
                     </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <span for="inputSexo">Sexo</span> 
+                        <select class="form-control" name="membro_sexo" id="membro_sexo">
+                            <option value="0">Selecione o Sexo</option>
+                            <option value="f">Feminino</option>
+                            <option value="m">Masculino</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <span for="inputIgreja">Igreja</span>
+                        <div id="lista_igrejas">
+                        </div>
+                    </div>                                
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <span for="inputTelefone">Telefone</span>
+                        <input id="membro_telefone" type="text" class="form-control" placeholder="Telefone">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <span for="inputEmail">E-mail</span>
+                        <input id="membro_email" type="text" class="form-control" placeholder="E-mail do Membro">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <span for="inputRua">Rua</span>
+                        <input id="membro_rua" type="text" class="form-control" placeholder="Nome da Rua">
+                    </div>
+
+                    <div class="form-group col-md-5">
+                            <span for="inputRua">Bairro</span>
+                            <input id="membro_bairro" type="text" class="form-control" placeholder="Nome do Bairro">
+                        </div>
+
+                    <div class="form-group col-md-2">
+                        <span for="inputRua">Número</span>
+                        <input id="membro_numero" type="text" class="form-control" placeholder="Número">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <span for="inputComplemento">Complemento</span>
+                        <input id="membro_complemento" type="text" class="form-control" placeholder="Complemento do Endereço">
+                    </div>
+                </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="inputCidade">Cidade</label>
+                  <input id="membro_cidade" type="text" class="form-control" placeholder="Cidade">
             </div>
-        </div>
+            <div class="form-group col-md-4">
+              <label for="inputUF">Estado</label>
+              <select id="membro_uf" name="membro_uf" class="form-control">
+                  <option value="0">Selecione o Estado</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputCep">CEP</label>
+              <input id="membro_cep" type="text" class="form-control" placeholder="Código de Endereçamento Postal">
+            </div>
+          </div>
 
-    </div>
+          <div class="form-row">
+              <div class="form-group col-md-2">
+                <input class="btn btn-primary" id="btn_add_membro" onclick="addMembroIgreja()" type="button" value="Cadastrar"></input>
+              </div>
+          </div>
 
-    <div class="row">
-      <p></p>
+        </form>        
     </div>
-    <div class="row">
-      <div class="col-md-6">
-      </div>
-      <div class="col-md-6">
-        <div class="alinhamento">
-          <input class="btn btn-success" id="btn_add_membro" onclick="addMembroIgreja()" type="button" value="Cadastrar"></input>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <p></p>
-    </div>
-  </div>
-
 </div>
+
 
 <div class="row">
     <div class="col-md-5">
