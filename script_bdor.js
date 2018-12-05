@@ -135,72 +135,93 @@ function addCulto() {
 }
 
 function atualizaListaMembros() {
-    
+
     $("#mostra_membros_igrejas").empty();
+
+    var igreja_nome = $("#membro_igreja_nome").val();
+    var membro_nome = $("#proc_membro_nome").val();
     //
-    var dados = {
-        "funcao" : ordem,
-        "membro_igreja_nome" : membro_igreja_nome,
-        "membro_nome" : membro_nome
-    };
-    //
-
-    //
-    var texto_retorno = ""; //corpo da div
-
-    texto_retorno += '<table class="table table-striped" style="width:100%;"><thead><tr><th style="width:5%;">#</th><th style="width:95%;">Nome</th></tr></thead>';
-    texto_retorno += '<tbody>';
-    //
-    for (i in retorno) {
-
-        var n = parseInt(parseInt(i)+1);
-
-        texto_retorno += '<tr>';
-        texto_retorno += '<td>'+ n +'</td>';
-        texto_retorno +='<td>';
-
-        texto_retorno += '<a role="button" data-toggle="collapse" href="#collapse'+n+'" aria-expanded="false" aria-controls="collapse'+n+'">';
-        texto_retorno += '' + retorno[i].nome + '';
-        texto_retorno += '</a>';
-
-        texto_retorno += '<div class="collapse" id="collapse'+n+'">';
-        texto_retorno +=    '<div class="well">';
-        texto_retorno +=        '<p class="recuo">';
-        texto_retorno +=            'CPF: '+ retorno[i].cpf + '<br>';
-        texto_retorno +=        '</p>';
-        texto_retorno +=        '<p class="recuo">';
-        texto_retorno +=            'Igreja: '+ retorno[i].nome_igreja + '<br>';
-        texto_retorno +=        '</p>';
-
-        texto_retorno +=        '<p class="recuo">';
-        texto_retorno +=            'Endereço: ' + retorno[i].rua + ', ' + retorno[i].numero;
-        texto_retorno +=            ', ' + retorno[i].bairro + ', ' + retorno[i].cep;
-        texto_retorno +=        '</p>';
-        texto_retorno +=    '</div>';
-
-        texto_retorno +=    '<div class="row">';
-
-        texto_retorno +=     '<input type="hidden" id="membro_ig'+retorno[i].cpf+'" value="'+retorno[i].nome_igreja+'" type="text">';
-
-        texto_retorno +=        '<div class="col-md-10">';
-        texto_retorno +=            '<div id="msg_pastor'+retorno[i].cpf+'"></div>';
-        texto_retorno +=        '</div>';
-
-        texto_retorno +=        '<div class="col-md-10">';
-        texto_retorno +=            '<div class="alinhamento">';
-        texto_retorno +=                '<input class="btn btn-success" id="btn_promover" onclick="envia2(88,'+retorno[i].cpf+')" type="button" value="Promover"></input>';
-        texto_retorno +=            '</div>';
-        texto_retorno +=        '</div>';
-
-        texto_retorno +=    '</div>';
-
-        texto_retorno += '</div>';
-        texto_retorno += '</td>';
-
-        texto_retorno += '</tr>';
-
+    if (!membro_nome){
+        membro_nome = "";
     }
-    texto_retorno += '</tbody></table>';
 
-    $("#mostra_membros_igrejas").append(texto_retorno);
+    var dados = {
+        "igreja_nome" : igreja_nome,
+        "membro_nome" : membro_nome
+    }
+
+    $.ajax({
+        method: "GET",
+        url: "pastor/lista_nao_pastores.php",
+        data: dados
+    }).done((retorno) => {
+
+        retorno = JSON.parse(retorno);
+
+        var texto_retorno = ""; //corpo da div
+
+        texto_retorno += '<table class="table table-striped" style="width:100%;"><thead><tr><th style="width:5%;">#</th><th style="width:95%;">Nome</th></tr></thead>';
+        texto_retorno += '<tbody>';
+        //
+        for (i in retorno) {
+
+            var n = parseInt(parseInt(i)+1);
+
+            texto_retorno += '<tr>';
+            texto_retorno += '<td>'+ n +'</td>';
+            texto_retorno +='<td>';
+
+            texto_retorno += '<a role="button" data-toggle="collapse" href="#collapse'+n+'" aria-expanded="false" aria-controls="collapse'+n+'">';
+            texto_retorno += '' + retorno[i].membro_nome+ '';
+            texto_retorno += '</a>';
+
+            texto_retorno += '<div class="collapse" id="collapse'+n+'">';
+            texto_retorno +=    '<div class="well">';
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'CPF: '+ retorno[i].membro_cpf + '<br>';
+            texto_retorno +=        '</p>';
+
+            texto_retorno +=        '<p class="recuo">';
+            texto_retorno +=            'Endereço: ' + retorno[i].rua + ', ' + retorno[i].numero;
+            texto_retorno +=            ', ' + retorno[i].bairro + ', ' + retorno[i].cep;
+            texto_retorno +=        '</p>';
+            texto_retorno +=    '</div>';
+
+            texto_retorno +=    '<div class="row">';
+            texto_retorno +=        '<div class="col-md-10">';
+            texto_retorno +=            '<div class="alinhamento">';
+            texto_retorno +=                '<input class="btn btn-primary" id="btn_promover" onclick="promoveParaPastor('+retorno[i].membro_cpf + ',' + igreja_nome + ')" type="button" value="Promover"></input>';
+            texto_retorno +=            '</div>';
+            texto_retorno +=        '</div>';
+
+            texto_retorno +=    '</div>';
+
+            texto_retorno += '</div>';
+            texto_retorno += '</td>';
+
+            texto_retorno += '</tr>';
+
+        }
+        texto_retorno += '</tbody></table>';
+
+        $("#mostra_membros_igrejas").append(texto_retorno);
+    });
+}
+
+
+function promoveParaPastor(cpf_membro, igreja_nome) {
+
+    var dados = {
+        "cpf_nome" : cpf_nome,
+        "igreja_nome" : igreja_nome
+    };
+
+    $.ajax({
+        method: "POST",
+        url: "pastor/add_pastor.php",
+        data: dados
+    }).done((retorno) => {
+
+
+    });
 }
