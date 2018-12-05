@@ -13,43 +13,35 @@
 </div>
 
 <div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <span for="inputIgreja">Igreja</span>
+                    <div id="lista_igrejas">
 
-    <div class="row">
+                    </div>
+                </div>
 
-        <div class="col-md-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Igreja:</span>
-                <div id="lista_igrejas">
+                <div class="form-group col-md-4">
+                    <span for="inputPreletor">Pastor</span>
+                    <input type="text" class="form-control" placeholder="Pastores de uma Igreja" id="proc_pastor_nome"/>
+                </div>
 
+                <div class="form-group col-md-2 botaozin">
+                    <input class="btn btn-primary" id="btn_procura_pastores" onclick="listaPastores()" type="button" value="Procurar"></input>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Pastor:</span>
-                <input id="proc_pastor_nome" type="text" class="form-control" placeholder="Digite um nome do membro" aria-describedby="basic-addon1">
-            </div>
-        </div>
+        </form>
+    </div>
+</div>
 
-        <div class="col-md-4">
-
-            <input class="btn btn-success" id="btn_procura_pastores" onclick="listaPastores()" type="button" value="Procurar"></input>
-
+<div class="row">
+    <div class="col-md-12">
+        <div id="mostra_pastores">
+            <p></p>
         </div>
     </div>
-
-    <div class="row">
-        <p></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-          <div id="mostra_pastores">
-              <p></p>
-          </div>
-        </div>
-    </div>
-
 </div>
 
 <script type='text/javascript'>
