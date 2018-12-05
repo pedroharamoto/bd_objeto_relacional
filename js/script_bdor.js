@@ -52,7 +52,7 @@ function addIgreja(){
     }).done((data) => alert(data));
 }
 
-function listaIgrejas() {
+function listaIgrejas(callback = null) {
 
 
     $.ajax({
@@ -60,11 +60,6 @@ function listaIgrejas() {
         url: "igreja/lista_igrejas.php"
     }).done((retorno) => {
 
-<<<<<<< HEAD
-        //alert(retorno);
-
-=======
->>>>>>> front
         retorno = JSON.parse(retorno);
 
         var texto_retorno = '<select class="form-control" name="membro_igreja_nome" id="membro_igreja_nome">';
@@ -80,6 +75,8 @@ function listaIgrejas() {
         texto_retorno += '</select>';
         $("#lista_igrejas").append(texto_retorno);
 
+        if(callback != null)
+            callback();
     });
 }
 
@@ -249,5 +246,13 @@ function listaMembrosIgreja() {
             "nome_igreja" : nome_igreja
     };
 
-    
+    $("#lista_membros").empty();
+
+
+    $.ajax({
+        method: "GET",
+        url: "membro/lista_membros_igreja.php",
+
+    })
+
 }

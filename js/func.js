@@ -1111,9 +1111,7 @@ function show_lista_igrejas(){
             texto_retorno += '</select>';
             $("#lista_igrejas").append(texto_retorno);
 
-            $("#membro_igreja_nome").change(function(){
-                show_lista_membros_igreja($(this).val());
-            });
+            
         }
     };
     //
