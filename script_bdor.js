@@ -60,11 +60,6 @@ function listaIgrejas() {
         url: "igreja/lista_igrejas.php"
     }).done((retorno) => {
 
-<<<<<<< HEAD
-        //alert(retorno);
-
-=======
->>>>>>> front
         retorno = JSON.parse(retorno);
 
         var texto_retorno = '<select class="form-control" name="membro_igreja_nome" id="membro_igreja_nome">';
